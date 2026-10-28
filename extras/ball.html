@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A texture on a sphere, with three.js</title>
+  <link rel="icon" href="data:,">
+  <style>
+    body { margin: 0; background: #0e1330; color: #e8ebf5; font-family: system-ui, sans-serif; }
+    canvas { display: block; }
+    p { position: absolute; left: 16px; right: 16px; bottom: 16px; margin: 0; font-size: 15px; opacity: 0.85; }
+    a { color: #9db0ff; }
+  </style>
+  <!-- Tells the browser where "three" and its add-ons come from: a CDN link, no build step. -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <p>Drag to turn, scroll to zoom. Swap <code>ball.png</code> for any 2:1 map image and the same code wraps it around the sphere. <a href="../">Back to Sneaker Studio</a></p>
+
+  <script type="module">
+    import * as THREE from 'three'
+    import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
+
+    const scene = new THREE.Scene()
+    scene.background = new THREE.Color('#0e1330')
+    const camera = new THREE.PerspectiveCamera(45, innerWidth / innerHeight, 0.1, 100)
+    camera.position.set(0, 0, 4)
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true })
+    renderer.setSize(innerWidth, innerHeight)
+    renderer.setPixelRatio(devicePixelRatio)
+    document.body.append(renderer.domElement)
+
+    // The image is wrapped around the sphere like a map: left to right goes around, top and bottom are the poles.
+    const texture = new THREE.TextureLoader().load('ball.png')
+    texture.colorSpace = THREE.SRGBColorSpace
+    const ball = new THREE.Mesh(
+      new THREE.SphereGeometry(1, 64, 32),
+      new THREE.MeshStandardMaterial({ map: texture })
+    )
+    scene.add(ball)
+
+    // Soft light everywhere, plus one bright light from the side so it looks round.
+    scene.add(new THREE.AmbientLight(0xffffff, 0.8))
+    const light = new THREE.DirectionalLight(0xffffff, 2.5)
+    light.position.set(3, 2, 4)
+    scene.add(light)
+
+    // Drag to turn, scroll or pinch to zoom.
+    const controls = new OrbitControls(camera, renderer.domElement)
+    controls.enableDamping = true
+
+    renderer.setAnimationLoop(() => {
+      ball.rotation.y += 0.004
+      controls.update()
+      renderer.render(scene, camera)
+    })
+
+    addEventListener('resize', () => {
+      camera.aspect = innerWidth / innerHeight
+      camera.updateProjectionMatrix()
+      renderer.setSize(innerWidth, innerHeight)
+    })
+  </script>
+</body>
+</html>

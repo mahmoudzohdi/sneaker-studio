@@ -25,6 +25,8 @@ Each step is one commit with a tag, and each one went live before the next start
 | [`step-5`](https://github.com/mahmoudzohdi/sneaker-studio/tree/step-5) | Specs from `data/sneaker.json`, animated with CSS |
 | [`step-6`](https://github.com/mahmoudzohdi/sneaker-studio/tree/step-6) | This README, after checking the live link like a judge |
 
+Extra: [`extras/ball.html`](https://mahmoudzohdi.github.io/sneaker-studio/extras/ball.html) wraps a texture image around a sphere with three.js, the same technique as a planet map.
+
 To open a step on your laptop: `git checkout step-3`, and `git checkout main` to come back.
 
 ## Run it on your laptop
@@ -41,6 +43,7 @@ Then open http://localhost:8000.
 
 - 3D model: [Materials Variants Shoe](https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe) by Shopify, CC BY 4.0, from the Khronos glTF Sample Assets
 - 3D viewer: [model-viewer](https://modelviewer.dev) by Google
+- Extra: [three.js](https://threejs.org); the ball texture was drawn for this demo
 - Specs: example data written for this demo, in `data/sneaker.json`
 
 ## AI tools we used
