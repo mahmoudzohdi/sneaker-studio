@@ -47,6 +47,26 @@ section p { margin: 0 0 8px; }
 .card h3 { margin: 16px 0 4px; }
 .card .credit { font-size: 14px; color: var(--muted); }
 
+/* The studio: the 3D viewer and its panel side by side. */
+.studio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.viewer {
+  flex: 2 1 320px;
+  min-height: 360px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--muted);
+}
+.panel {
+  flex: 1 1 200px;
+}
+.panel h3 { margin: 0 0 8px; }
+
 /* Flexbox: team members side by side, wrapping when space runs out. */
 .team {
   display: flex;

@@ -1,8 +1,8 @@
-# Project name
+# Sneaker Studio
 
-One sentence: what your project does, and for whom.
+A 3D sneaker you can turn, zoom and recolour in the browser. The code-along demo for the NASA Space Apps Cairo 2026 web development workshop.
 
-**Live link:** https://YOUR-USERNAME.github.io/YOUR-REPO/
+**Live link:** https://mahmoudzohdi.github.io/sneaker-studio/
 
 ## What it does
 
