@@ -1,0 +1,9 @@
+{
+  "note": "Example data for the demo, not a real product.",
+  "specs": [
+    { "label": "Comfort", "score": 86 },
+    { "label": "Grip", "score": 72 },
+    { "label": "Breathability", "score": 64 },
+    { "label": "Durability", "score": 90 }
+  ]
+}
