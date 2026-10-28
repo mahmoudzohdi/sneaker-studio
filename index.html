@@ -28,7 +28,16 @@
     <section id="feature">
       <h2>Try it</h2>
       <div class="studio">
-        <div class="viewer">The 3D sneaker goes here</div>
+        <model-viewer
+          id="shoe"
+          class="viewer"
+          src="models/shoe.glb"
+          alt="A 3D model of a sneaker"
+          camera-controls
+          auto-rotate
+          touch-action="pan-y"
+          shadow-intensity="1">
+        </model-viewer>
         <aside class="panel">
           <h3>Colours</h3>
           <p>Coming soon.</p>
@@ -50,9 +59,13 @@
   </main>
 
   <footer>
-    <p>Credits: list every dataset, image and library you used, with links.</p>
+    <p>
+      3D model: <a href="https://github.com/KhronosGroup/glTF-Sample-Assets/tree/main/Models/MaterialsVariantsShoe">Materials Variants Shoe</a> by Shopify, CC BY 4.0.
+      3D viewer: <a href="https://modelviewer.dev">model-viewer</a> by Google.
+    </p>
   </footer>
 
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.4.0/dist/model-viewer.min.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -55,12 +55,9 @@ section p { margin: 0 0 8px; }
 }
 .viewer {
   flex: 2 1 320px;
-  min-height: 360px;
-  display: grid;
-  place-items: center;
+  height: 380px;
   border-radius: var(--radius);
   background: var(--bg);
-  color: var(--muted);
 }
 .panel {
   flex: 1 1 200px;
