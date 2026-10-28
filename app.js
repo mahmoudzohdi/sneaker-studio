@@ -13,3 +13,11 @@ spin.addEventListener('click', () => {
   shoe.autoRotate = !shoe.autoRotate
   spin.textContent = shoe.autoRotate ? 'Stop turning' : 'Start turning'
 })
+
+// Numbered points on the shoe: tap one to read about that part.
+const info = document.querySelector('#info')
+document.querySelectorAll('.hotspot').forEach((point) => {
+  point.addEventListener('click', () => {
+    info.textContent = point.dataset.info
+  })
+})

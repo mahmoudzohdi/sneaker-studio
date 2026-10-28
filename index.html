@@ -37,6 +37,12 @@
           auto-rotate
           touch-action="pan-y"
           shadow-intensity="1">
+          <button class="hotspot" slot="hotspot-laces" data-position="0.013m 0.086m 0.024m" data-normal="0.305m 0.763m 0.570m"
+            data-info="Laces: flat laces that stay tied all day.">1</button>
+          <button class="hotspot" slot="hotspot-heel" data-position="-0.115m 0.090m 0.017m" data-normal="-0.479m 0.584m 0.655m"
+            data-info="Heel: a padded heel that holds your foot in place.">2</button>
+          <button class="hotspot" slot="hotspot-sole" data-position="-0.018m 0.020m 0.047m" data-normal="-0.346m 0.176m 0.922m"
+            data-info="Sole: light foam that softens every step.">3</button>
         </model-viewer>
         <aside class="panel">
           <h3>Colours</h3>
@@ -46,6 +52,7 @@
             <button data-variant="street">Black</button>
           </div>
           <button id="spin">Stop turning</button>
+          <p id="info" class="info">Tap a number on the shoe to see that part.</p>
         </aside>
       </div>
     </section>
