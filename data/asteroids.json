@@ -1,0 +1,14 @@
+{
+  "source": "NASA/JPL Small-Body Database, https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html",
+  "saved": "2026-10-28",
+  "asteroids": [
+    { "name": "99942 Apophis (2004 MN4)", "diameter_km": 0.34, "hazardous": true, "orbit_class": "Aten" },
+    { "name": "101955 Bennu (1999 RQ36)", "diameter_km": 0.484, "hazardous": true, "orbit_class": "Apollo" },
+    { "name": "433 Eros (A898 PA)", "diameter_km": 16.84, "hazardous": false, "orbit_class": "Amor" },
+    { "name": "162173 Ryugu (1999 JU3)", "diameter_km": 0.896, "hazardous": true, "orbit_class": "Apollo" },
+    { "name": "65803 Didymos (1996 GT)", "diameter_km": 0.78, "hazardous": true, "orbit_class": "Apollo" },
+    { "name": "25143 Itokawa (1998 SF36)", "diameter_km": 0.33, "hazardous": true, "orbit_class": "Apollo" },
+    { "name": "4179 Toutatis (1989 AC)", "diameter_km": 5.4, "hazardous": true, "orbit_class": "Apollo" },
+    { "name": "3200 Phaethon (1983 TB)", "diameter_km": 6.25, "hazardous": true, "orbit_class": "Apollo" }
+  ]
+}

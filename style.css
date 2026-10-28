@@ -1,0 +1,75 @@
+/* Colours and sizes used everywhere. Change them here. */
+:root {
+  --bg: #f5f6fa;
+  --surface: #ffffff;
+  --ink: #1d2230;
+  --muted: #5b6377;
+  --accent: #2448c9;
+  --line: #e2e5ee;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+img { max-width: 100%; display: block; border-radius: var(--radius); }
+a { color: var(--accent); }
+
+.hero {
+  padding: 56px 24px 40px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #1b2a6b, var(--accent));
+}
+.hero h1 { margin: 0 0 8px; font-size: 40px; line-height: 1.15; }
+.hero p { margin: 0 auto; max-width: 560px; opacity: 0.9; }
+
+main { max-width: 820px; margin: 0 auto; padding: 16px 24px 48px; }
+
+section {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+section h2 { margin: 0 0 8px; font-size: 22px; }
+section p { margin: 0 0 8px; }
+
+.card h3 { margin: 16px 0 4px; }
+.card .credit { font-size: 14px; color: var(--muted); }
+
+/* Flexbox: team members side by side, wrapping when space runs out. */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.team li {
+  flex: 1 1 200px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: var(--bg);
+}
+.team strong { display: block; }
+
+footer { padding: 24px; text-align: center; font-size: 14px; color: var(--muted); }
+
+/* One rule for phones. */
+@media (max-width: 600px) {
+  .hero { padding: 40px 16px 28px; }
+  .hero h1 { font-size: 30px; }
+  main { padding: 8px 16px 32px; }
+  section { padding: 18px; }
+}
