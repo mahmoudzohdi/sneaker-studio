@@ -64,6 +64,19 @@ section p { margin: 0 0 8px; }
 }
 .panel h3 { margin: 0 0 8px; }
 
+button {
+  font: inherit;
+  font-size: 15px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+button:hover { border-color: var(--accent); color: var(--accent); }
+.colors { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+
 /* Flexbox: team members side by side, wrapping when space runs out. */
 .team {
   display: flex;
