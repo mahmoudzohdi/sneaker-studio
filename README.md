@@ -31,13 +31,13 @@ To open a step on your laptop: `git checkout step-3`, and `git checkout main` to
 
 ## Run it on your laptop
 
-`fetch()` doesn't work when you double-click `index.html`, so start a small local server in this folder:
+Double-clicking `index.html` opens it as a file, and browsers block `fetch()` for files, so the 3D model and the specs won't load. Open it from a small local server instead, whichever you have:
 
-```sh
-python -m http.server 8000
-```
+- **Node.js:** run `npx serve` in this folder, then open the address it prints (http://localhost:3000).
+- **VS Code:** install the *Live Server* extension, then click **Go Live**.
+- **Python:** run `python -m http.server 8000`, then open http://localhost:8000.
 
-Then open http://localhost:8000.
+Or skip it: commit, push, and check your live link.
 
 ## Data and credits
 
