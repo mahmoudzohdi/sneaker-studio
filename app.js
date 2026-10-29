@@ -1,3 +1,5 @@
+// The code for steps 3 to 5 goes here. Copy each block from STEPS.md.
+
 const shoe = document.querySelector('#shoe')
 
 // Colour buttons: each one picks a colourway that is built into the 3D model.

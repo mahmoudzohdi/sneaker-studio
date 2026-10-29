@@ -12,6 +12,10 @@ Photos show a shoe from one angle, in one colour. Sneaker Studio shows it in 3D:
 
 A static page (HTML, CSS and JavaScript) on GitHub Pages. The 3D viewer is [model-viewer](https://modelviewer.dev), loaded from a CDN link. No build step, no framework.
 
+## Code along
+
+Start from the [`empty-template`](https://github.com/mahmoudzohdi/sneaker-studio/tree/empty-template) branch: click **Use this template**, then follow its [STEPS.md](https://github.com/mahmoudzohdi/sneaker-studio/blob/empty-template/STEPS.md). Everything is ready except each step's code.
+
 ## Built step by step
 
 Each step is one commit with a tag, and each one went live before the next started.
