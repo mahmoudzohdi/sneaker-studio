@@ -1,0 +1,145 @@
+/* All the CSS for every step is already here, so you only paste HTML and JavaScript (see STEPS.md). */
+
+/* Colours and sizes used everywhere. Change them here. */
+:root {
+  --bg: #f5f6fa;
+  --surface: #ffffff;
+  --ink: #1d2230;
+  --muted: #5b6377;
+  --accent: #2448c9;
+  --line: #e2e5ee;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+img { max-width: 100%; display: block; border-radius: var(--radius); }
+a { color: var(--accent); }
+
+.hero {
+  padding: 56px 24px 40px;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(135deg, #1b2a6b, var(--accent));
+}
+.hero h1 { margin: 0 0 8px; font-size: 40px; line-height: 1.15; }
+.hero p { margin: 0 auto; max-width: 560px; opacity: 0.9; }
+
+main { max-width: 820px; margin: 0 auto; padding: 16px 24px 48px; }
+
+section {
+  margin-top: 24px;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+section h2 { margin: 0 0 8px; font-size: 22px; }
+section p { margin: 0 0 8px; }
+
+.card h3 { margin: 16px 0 4px; }
+.card .credit { font-size: 14px; color: var(--muted); }
+
+/* The studio: the 3D viewer and its panel side by side. */
+.studio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.viewer {
+  flex: 2 1 320px;
+  height: 380px;
+  border-radius: var(--radius);
+  background: var(--bg);
+}
+.panel {
+  flex: 1 1 200px;
+}
+.panel h3 { margin: 0 0 8px; }
+
+button {
+  font: inherit;
+  font-size: 15px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  cursor: pointer;
+}
+button:hover { border-color: var(--accent); color: var(--accent); }
+.colors { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+
+/* The numbered points that sit on the 3D model. */
+.hotspot {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.3);
+}
+.hotspot:hover { color: #fff; }
+
+.info {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--bg);
+}
+
+/* Specs: each row rises in, then its bar fills up. */
+.specs { display: grid; gap: 14px; margin-bottom: 12px; }
+.spec { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; opacity: 0; }
+.bar { grid-column: 1 / -1; height: 10px; border-radius: 99px; background: var(--bg); overflow: hidden; }
+.bar div { width: var(--score); height: 100%; border-radius: inherit; background: var(--accent); }
+.note { font-size: 14px; color: var(--muted); }
+
+.specs.show .spec { animation: rise 0.6s ease-out calc(var(--i) * 0.15s) both; }
+.specs.show .bar div { animation: fill 1s ease-out calc(var(--i) * 0.15s + 0.3s) both; }
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; } }
+@keyframes fill { from { width: 0; } }
+@media (prefers-reduced-motion: reduce) {
+  .spec { opacity: 1; }
+  .specs.show .spec, .specs.show .bar div { animation: none; }
+}
+
+/* Flexbox: team members side by side, wrapping when space runs out. */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.team li {
+  flex: 1 1 200px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: var(--bg);
+}
+.team strong { display: block; }
+
+footer { padding: 24px; text-align: center; font-size: 14px; color: var(--muted); }
+
+/* One rule for phones. */
+@media (max-width: 600px) {
+  .hero { padding: 40px 16px 28px; }
+  .hero h1 { font-size: 30px; }
+  main { padding: 8px 16px 32px; }
+  section { padding: 18px; }
+}
