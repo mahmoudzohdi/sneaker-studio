@@ -37,7 +37,7 @@ To open a step on your laptop: `git checkout step-3`, and `git checkout main` to
 
 Double-clicking `index.html` opens it as a file, and browsers block `fetch()` for files, so the 3D model and the specs won't load. Open it from a small local server instead, whichever you have:
 
-- **Node.js:** run `npx serve` in this folder, then open the address it prints (http://localhost:3000).
+- **Node.js:** run `npx serve` in this folder, then open the address it prints (http://localhost:3000). The first time, it asks to download the `serve` package: press `y`, or run `npx --yes serve` to skip the question. It needs internet only that first time.
 - **VS Code:** install the *Live Server* extension, then click **Go Live**.
 - **Python:** run `python -m http.server 8000`, then open http://localhost:8000.
 
