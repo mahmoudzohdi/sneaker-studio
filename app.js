@@ -16,6 +16,37 @@ spin.addEventListener('click', () => {
   spin.textContent = shoe.autoRotate ? 'Stop turning' : 'Start turning'
 })
 
-// Step 4: paste the points code here
+// Numbered points on the shoe: tap one to read about that part.
+const info = document.querySelector('#info')
+document.querySelectorAll('.hotspot').forEach((point) => {
+  point.addEventListener('click', () => {
+    info.textContent = point.dataset.info
+  })
+})
 
-// Step 5: paste the specs code here
+// Specs from a file in this repo, drawn as bars. The animation itself is in style.css.
+const specs = document.querySelector('#specs')
+
+async function showSpecs() {
+  const res = await fetch('data/sneaker.json')
+  const sneaker = await res.json()
+  specs.innerHTML = sneaker.specs
+    .map((spec, i) => `
+      <div class="spec" style="--score: ${spec.score}%; --i: ${i}">
+        <span>${spec.label}</span>
+        <strong>${spec.score}</strong>
+        <div class="bar"><div></div></div>
+      </div>`)
+    .join('')
+}
+
+
+// Start the animation when the specs scroll into view, so people actually see it.
+new IntersectionObserver((entries, observer) => {
+  if (entries[0].isIntersecting) {
+    specs.classList.add('show')
+    observer.disconnect()
+  }
+}).observe(specs)
+
+showSpecs()
